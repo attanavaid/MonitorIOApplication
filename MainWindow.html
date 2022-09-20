@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+            Monitor I/O
+        </title>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel = "stylesheet" href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <link rel = "stylesheet" href = "MainWindowFiles/MainWindow.css">
+    </head>
+    <body>
+
+        <!-- NAVIGATION BAR -->
+
+        <nav class = "navbar navbar-expand-sm navbar-light">
+            <p class = "navbar-brand">
+                Monitor<b>IO</b>
+            </p>
+            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#collapsibleNavbar">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+            <div class = "collapse navbar-collapse" id = "collapsibleNavbar">
+                <ul class = "navbar-nav">
+                    <li class = "nav-item">
+                        <a class = "nav-link" onclick = "revealPage(1)">
+                            Home
+                        </a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" onclick = "revealPage(2)">
+                            Patients
+                        </a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" onclick = "revealPage(8)">
+                            Settings
+                        </a>
+                    </li>
+                    <li class = "nav-item dropdown">
+                        <a class = "nav-link dropdown-toggle" id = "navbarDropdown" data-toggle = "dropdown">
+                            About
+                        </a>
+                        <div class = "dropdown-menu">
+                            <a class = "dropdown-item" href = "#" onclick = "revealPage(9)">
+                                About Us
+                            </a>
+                            <a class = "dropdown-item" href = "#" onclick = "revealPage(10)">
+                                Contact Us
+                            </a>
+                            <a class = "dropdown-item" href = "#" onclick = "revealPage(11)">
+                                FAQ
+                            </a>
+                            <div class = "dropdown-divider"></div>
+                            <a class = "dropdown-item" href = "#" onclick = "revealPage(12)">
+                                Privacy Policy
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class = "collapse navbar-collapse" id = "collapsibleNavbar">
+                <div class = "navbar-nav ml-auto">
+                    <div class = "nav-item">
+                        <a class = "btn btn-secondary" style = "color: white;" onclick = "revealPage(13)">
+                            <img src = "Icons/user.png" class = "icon" width = "20" height = "20">
+                            Profile
+                        </a>
+                        <a class = "btn btn-secondary" href = "Login.html" id = "logout">
+                            <img src = "Icons/signout.png" class = "icon" width = "20" height = "20">
+                            Log out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HEADER -->  
+
+        <div class = "container-fluid" id = "headerStrip">
+            <div class = "row">
+                <div class = "col border-top border-dark" style = "padding-top: 8px;"></div>
+            </div>
+        </div>
+
+        <!-- 1 - HOME PAGE -->
+
+        <div class = "homePage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div>
+                            <h1>
+                                Hello!
+                            </h1>
+                        </div>
+                        <div>
+                            <p>
+                                This application allows you to monitor patients in the ICU by helping you view, approve, and edit patient vitals and information.
+                                You will be allowed to view certain patient information depending on your professional status.
+                                <br><br>
+                                If you wish to view files pertaining to your patient, or if you wish to view your own patient files, please click on "Patients" in the navigation bar, and use the
+                                code given to you by your patient to view, approve, or edit their files.
+                                <br>
+                                More infomation can be found on the <a href = "#" onclick = "revealPage(9)">About Us Page</a>.
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                Date/Time: <span id = "dateAndTime"></span>
+                            </p>
+                        </div>
+                        <div class = "features">
+                            <h2>
+                                New features
+                            </h2>
+                            <p style = "color: #999;">
+                                July 6, 2021 <br>
+                                12:08 PM EDT <br>
+                                Written by
+                                <a class = "popup" onclick = "showPopUp()" style = "color: #007bff;">
+                                    Atta
+                                    <span class = "popuptext" id = "infoPopup">
+                                        Team 10 Member
+                                        <br>
+                                        Email: a302@umbc.edu
+                                    </span>
+                                </a>
+                            </p>
+                            <p>
+                                Here are some new features that were recently added to this application:
+                            </p>
+                            <ul>
+                                <li>
+                                    New pages like FAQ, Contact Us, and more!
+                                    Click on "About" in the navigation bar to explore them!
+                                </li>
+                                <li>
+                                    Redesigned Footer (looks much cleaner and simplistic)!
+                                </li>
+                                <li>
+                                    Now you can view your profile on the application!
+                                    Click the "Profile" button in the navigation bar to explore your profile right now!
+                                </li>
+                                <li>
+                                    New settings page with special features like dark mode and much more!
+                                    Click on "Settings" in the navigation bar to explore the amazing features!
+                                </li>
+                            </ul>
+                            <p>
+                                All of these <em>amazing features</em> will continually be developed in the future to become better and better.
+                            </p>
+                            <p>
+                                As of now, surf the site and have a great day exploring them!
+                            </p>
+                        </div>
+                        <div class = "maintenance">
+                            <h2 style = "margin-top: 40px;">
+                                Maintenance
+                            </h2>
+                            <p style = "color: #999;">
+                                July 2, 2021 <br>
+                                1:23 PM EDT <br>
+                                Written by
+                                <a class = "popup" onclick = "showPopUp2()" style = "color: #007bff;">
+                                    Sam
+                                    <span class = "popuptext" id = "infoPopup2">
+                                        Team 10 Member
+                                        <br>
+                                        Email: s99@umbc.edu
+                                    </span>
+                                </a>
+                            </p>
+                            <p>
+                                Some services will be <mark>down for maintenance on July 10 from 4:00 PM EDT to 7:00 PM EDT.</mark> Thank you for your patience!
+                                <br>
+                                Here are some things to note when this site is under maintenance.
+                            </p>
+                            <ul>
+                                <li>
+                                    In an emergency, contact us via the <a href = "#" onclick = "revealPage(10)">Contact Us Page</a>.
+                                </li>
+                                <li>
+                                    If you are on the site and the site is about to go under maintenance.
+                                    You will lose your current session, and changes you make will not be recorded.
+                                </li>
+                                <li>
+                                    If you have something very important to do on the application during maintenance
+                                    , contact us via the <a href = "#" onclick = "revealPage(10)">Contact Us Page</a>.
+                                    And you may be given access depending on the type of maintenance.
+                                </li>
+                            </ul>
+                            <p>
+                                We hope you abide by these notes and be patient during our maintenance.
+                            </p>
+                            <p>
+                                It should also be noted that maintenance doesn't usually last for three hours, it just gives us time to truly solve the issues.
+                                <br><br>
+                                <em>Thank you</em> for using Monitor IO!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 - PATIENTS PAGE -->
+
+        <div class = "patientsPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1 style = "padding-top: 15px;">
+                                Patients
+                            </h1>
+                            <p class = "lead text-muted">
+                                To access patient files, please enter the relevent authentication code for the patient whose files you wish to access.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class = "container">
+                <div class = "rounded shadow-sm p-3 mb-3" style = "background-color: white;" id = "patientBoard">
+                    <div class = "float-right mt-2 mt-md-0">
+                        <input type = "text" class = "textInp" placeholder = "Search by Name or ID" id = "searchInp">
+                        <button class = "btn btn-outline-success ml-2" onclick = "searchFunction()" id = "searchButton">
+                            Search
+                        </button> 
+                    </div>
+                    <h6 class = "border-bottom">
+                        Admitted Patients
+                    </h6>
+                    <p class = "text-right mt-3" style = "display: none; font-size: 14px; margin-bottom: 0px; padding-bottom: 20px;" id = "revealAllButton">
+                        <button class = "float-right" onclick = "revealAllPatients()">
+                            Reveal All Patients
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 - VITALS PAGE -->
+
+        <div class = "vitalsPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center" id = "patientProfile1">
+                            <h1>
+                                Patient_X's Vitals
+                            </h1>
+                            <p class = "lead text-muted">
+                                <b>Patient ID:</b> 000024 | <b>File Number:</b> 100024
+                                <br>
+                                <b>Age:</b> 23 | <b>Gender:</b> Male | <b>Blood Type:</b> B+ | <b>Marital Status:</b> Single
+                                <br>
+                                <b>Email:</b> X@gmail.com | <b>Phone Number:</b> 123-456-7890
+                                <br>
+                                <b>Address:</b> 1000 Hilltop Circle, Baltimore, Maryland 21250, United States
+                            </p>
+                            <p>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(3);">
+                                    Vitals
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(4)">
+                                    Charts
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(5)">
+                                    Lab Results
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(6)">
+                                    Vitals Alert Settings
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(7)">
+                                    Device Controls
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "mt-5">
+                <div class = "container">
+                    <div class = "vitalsInfoBox mt-3 mb-3 rounded shadow-sm">
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                    Current Condition
+                                </h4>
+                                <hr>
+                            </div>
+                        </div>
+                        <div style = "margin: 2px 0px 25px 25px;">
+                            <p>
+                                Condition: <b id = "currCondition">Unstable</b>.
+                                <br><br>
+                                Current Alert Level:
+                            </p>
+                            <div id = "alertButton"></div>
+                            <br>
+                            <div id = "conditionMsgECG"></div>
+                            <div id = "conditionMsgSPO2"></div>
+                            <div id = "conditionMsgCO2"></div>
+                            <div id = "conditionMsgBP"></div>
+                        </div>
+                    </div>
+                    <div class = "row mb-3">
+                        <div class = "col-md-6">
+                            <div class = "rounded shadow-sm" id = "displayBox">
+                                <img src = "Icons/ECGWaveform.png" alt = "Pulse Rate" width = "100%" height = "225">
+                                <div id = "ECG">
+                                    104
+                                </div>
+                                <div class = "rounded bg-white m-4">
+                                    <p>
+                                        Pulse Rate, Heart Rate, HR, ECG/EKG in bpm.
+                                        <br>
+                                        Normal resting pulse rate: between 50 and 110 beats per minute.
+                                    </p>
+                                    <div class = "d-flex justify-content-between align-items-center">
+                                        <div class = "btn-group">
+                                            <button class = "btn btn-sm btn-outline-secondary" onclick = "approveVitals(1)">
+                                                Approve
+                                            </button>
+                                        </div>
+                                        <p class = "smallText text-muted">
+                                            ECG bpm
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col-md-6">
+                            <div class = "rounded shadow-sm" id = "displayBox">
+                                <img src = "Icons/SPO2Waveform.png" alt = "Body Temperature" width = "100%" height = "225">
+                                <div id = "SPO2">
+                                    79
+                                </div>
+                                <div class = "bg-white rounded m-4">
+                                    <p>
+                                        Oxygen Saturation, O2 sats, SpO2 in percentage (%).
+                                        <br>
+                                        Normal oxygen saturation: between 95% and 100%.
+                                    </p>
+                                    <div class = "d-flex justify-content-between align-items-center">
+                                        <div class = "btn-group">
+                                            <button class = "btn btn-sm btn-outline-secondary" onclick = "approveVitals(2)">
+                                                Approve
+                                            </button>
+                                        </div>
+                                        <p class = "smallText text-muted">
+                                            SpO2 %
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row mb-3">
+                        <div class = "col-md-6">
+                            <div class = "rounded shadow-sm" id = "displayBox">
+                                <img src = "Icons/RESPWaveform.png" alt = "Carbon Dioxide" width = "100%" height = "225">
+                                <div id = "CO2">
+                                    31
+                                </div>
+                                <div class = "bg-white rounded m-4">
+                                    <p>
+                                        Carbon Dioxide, CO2, EtCO2 in mmol/L (or in mEq/L).
+                                        <br>
+                                        Normal carbon dioxide levels: between 23 to 29 mmol/L.
+                                    </p>
+                                    <div class = "d-flex justify-content-between align-items-center">
+                                        <div class = "btn-group">
+                                            <button class = "btn btn-sm btn-outline-secondary" onclick = "approveVitals(3)">
+                                                Approve
+                                            </button>
+                                        </div>
+                                        <p class = "smallText text-muted">
+                                            EtCO2 mmol/L
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col-md-6">
+                            <div class = "rounded shadow-sm" id = "displayBox">
+                                <img src = "Icons/BPWaveform.png" alt = "Blood Pressure" width = "100%" height = "225">
+                                <div id = "BP">
+                                    <span id = "S_BP">145</span>/<span id = "D_BP">105</span>
+                                </div>
+                                <div class = "bg-white rounded m-4">
+                                    <p>
+                                        Blood Pressure, Systolic/Diastolic BP, NIBP in mmHg.
+                                        <br>
+                                        Normal systolic blood pressure: between 100 and 130 mmHg.
+                                        <br>
+                                        Normal diastolic blood pressure: between 60 and 100 mmHg.
+                                    </p>
+                                    <div class = "d-flex justify-content-between align-items-center">
+                                        <div class = "btn-group">
+                                            <button class = "btn btn-sm btn-outline-secondary" onclick = "approveVitals(4)">
+                                                Approve
+                                            </button>
+                                        </div>
+                                        <p class = "smallText text-muted">
+                                            BP mmHg
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "vitalsInfoBox rounded shadow-sm p-3">
+                        <h4 style = "margin-left: 6px;" id = "vitTitle">
+                            Vital Approval Logs
+                        </h4>
+                        <hr>
+                        <div id = "vitalsLog">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 - CHARTS PAGE -->
+
+        <div class = "chartsPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center" id = "patientProfile2">
+                            <h1>
+                                Patient_X's Charts
+                            </h1>
+                            <p class = "lead text-muted">
+                                <b>Patient ID:</b> 000024 | <b>File Number:</b> 100024
+                                <br>
+                                <b>Age:</b> 23 | <b>Gender:</b> Male | <b>Blood Type:</b> B+ | <b>Marital Status:</b> Single
+                                <br>
+                                <b>Email:</b> X@gmail.com | <b>Phone Number:</b> 123-456-7890
+                                <br>
+                                <b>Address:</b> 1000 Hilltop Circle, Baltimore, Maryland 21250, United States
+                            </p>
+                            <p>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(3);">
+                                    Vitals
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(4)">
+                                    Charts
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(5)">
+                                    Lab Results
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(6)">
+                                    Vitals Alert Settings
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(7)">
+                                    Device Controls
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "chartsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Charts
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div>
+                            <img src = "Icons/grey_back.png" alt = "Chest X-ray"  width = "100%" height = "100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 - LAB RESULTS PAGE -->
+
+        <div class = "labResultsPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center" id = "patientProfile3">
+                            <h1>
+                                Patient_X's Lab Results
+                            </h1>
+                            <p class = "lead text-muted">
+                                <b>Patient ID:</b> 000024 | <b>File Number:</b> 100024
+                                <br>
+                                <b>Age:</b> 23 | <b>Gender:</b> Male | <b>Blood Type:</b> B+ | <b>Marital Status:</b> Single
+                                <br>
+                                <b>Email:</b> X@gmail.com | <b>Phone Number:</b> 123-456-7890
+                                <br>
+                                <b>Address:</b> 1000 Hilltop Circle, Baltimore, Maryland 21250, United States
+                            </p>
+                            <p>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(3);">
+                                    Vitals
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(4)">
+                                    Charts
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(5)">
+                                    Lab Results
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(6)">
+                                    Vitals Alert Settings
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(7)">
+                                    Device Controls
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "labResultsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Chest X-ray
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div>
+                            <img src = "Icons/XRAY_Chest_1.jpg" alt = "Chest X-ray"  width = "100%" height = "100%">
+                        </div>
+                    </div>
+                </div>
+                <div class = "labResultsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Chest MRI
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div>
+                            <img src = "Icons/MRI_Chest_1.jpg" alt = "Chest X-ray"  width = "100%" height = "100%">
+                        </div>
+                    </div>
+                </div>
+                <div class = "labResultsBox m-3 rounded shadow-sm">
+                    <div class = "bg-white">
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <h4 style = "padding: 12px 0px 0px 25px;">
+                                    Request a Lab Test
+                                </h4>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div class = "row">
+                            <div class = "col-md-6">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        Patient name
+                                    </p>
+                                    <input type = "text" class = "textInp" placeholder = "Patient name" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                            <div class = "col-md-6">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        Your name
+                                    </p>
+                                    <input type = "text" class = "textInp" placeholder = "Your name" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        Scheduled Date and Time
+                                    </p>
+                                    <input type = "text" class = "textInp center-block" placeholder = "Scheduled Date and Time" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        What lab test are you requesting for the patient?
+                                    </p>
+                                    <input type = "text" class = "textInp center-block" placeholder = "Lab Test" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class = "btn btn-secondary" style = "margin-left: 0px;" onclick = "" id = "labTestReqButton">
+                                Request
+                            </button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 - VITALS ALERT SETTINGS PAGE -->
+
+        <div class = "vitalsAlertSettingsPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center" id = "patientProfile4">
+                            <h1>
+                                Patient_X's Vitals Alert Settings
+                            </h1>
+                            <p class = "lead text-muted">
+                                <b>Patient ID:</b> 000024 | <b>File Number:</b> 100024
+                                <br>
+                                <b>Age:</b> 23 | <b>Gender:</b> Male | <b>Blood Type:</b> B+ | <b>Marital Status:</b> Single
+                                <br>
+                                <b>Email:</b> X@gmail.com | <b>Phone Number:</b> 123-456-7890
+                                <br>
+                                <b>Address:</b> 1000 Hilltop Circle, Baltimore, Maryland 21250, United States
+                            </p>
+                            <p>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(3);">
+                                    Vitals
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(4)">
+                                    Charts
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(5)">
+                                    Lab Results
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(6)">
+                                    Vitals Alert Settings
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(7)">
+                                    Device Controls
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "alertsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Critical Alert (<b style = "color: red;">RED</b>)
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <p>
+                            Accompanied by a <b style = "color: red;">RED</b> button
+                            <br>
+                            Should be dealt with <b>IMMEDIATELY</b> within 9 minutes.
+                            <br>
+                            Symbolic appearance:
+                        </p>
+                        <button class = "btn btn-danger mt-2 mb-2" onclick = "">
+                            Critical Alert
+                        </button>
+                        <br><br>
+                        Activates when:
+                        <ol>
+                            <li>
+                                <b>Oxygen Saturation:</b> less than 80%
+                            </li>
+                            <li>
+                                <b>Carbon Dioxide:</b> greater than 40 or less than 10 mmol/L
+                            </li>
+                            <li>
+                                <b>Heart Rate:</b> greater than 130 bpm
+                            </li>
+                            <li>
+                                <b>Systolic Blood Pressure:</b> less than 80 mmHg
+                            </li>
+                            <li>
+                                <b>Obstructed Airway</b>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class = "alertsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                High Alert (<b style = "color: orange;">ORANGE</b>)
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <p>
+                            Accompanied by a <b style = "color: orange;">ORANGE</b> button
+                            <br>
+                            Should be dealt with <b>URGENTLY</b> within 15 minutes.
+                            <br>
+                            Symbolic appearance:
+                        </p>
+                        <button class = "btn btn-warning mt-2 mb-2" onclick = "">
+                            High Alert
+                        </button>
+                        <br><br>
+                        Activates when:
+                        <ol>
+                            <li>
+                                <b>Oxygen Saturation:</b> between 80% and 89%
+                            </li>
+                            <li>
+                                <b>Carbon Dioxide:</b> between 30 and 40 mmol/L
+                            </li>
+                            <li>
+                                <b>Heart Rate:</b> between 121 and 130, or less than 40 bpm
+                            </li>
+                            <li>
+                                <b>Systolic Blood Pressure:</b> between 80 and 89 mmHg
+                            </li>
+                            <li>
+                                <b>High Potential Airway Obstruction</b>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class = "alertsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Medium Alert (<b style = "color: yellow;">YELLOW</b>)
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <p>
+                            Accompanied by a <b style = "color: yellow;">YELLOW</b> button
+                            <br>
+                            Should be dealt with <b>AS SOON AS POSSIBLE</b> within 1 hour.
+                            <br>
+                            Symbolic appearance:
+                        </p>
+                        <button class = "btn mt-2 mb-2" style = "background-color: yellow;" onclick = "">
+                            Medium Alert
+                        </button>
+                        <br><br>
+                        Activates when:
+                        <ol>
+                            <li>
+                                <b>Oxygen Saturation:</b> between 90% and 94%
+                            </li>
+                            <li>
+                                <b>Carbon Dioxide:</b> between 10 and 23 mmol/L
+                            </li>
+                            <li>
+                                <b>Heart Rate:</b> between 111 and 120, or between 40 and 49 bpm
+                            </li>
+                            <li>
+                                <b>Systolic Blood Pressure:</b> between 90 and 99 mmHg
+                            </li>
+                            <li>
+                                <b>Low Potential Airway Obstruction</b>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class = "alertsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Low Alert (<b style = "color: green;">GREEN</b>)
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <p>
+                            Accompanied by a <b style = "color: green;">GREEN</b> button
+                            <br>
+                            Patient should remain on this alert.
+                            <br>
+                            Symbolic appearance:
+                        </p>
+                        <button class = "btn btn-success mt-2 mb-2" onclick = "">
+                            Low Alert
+                        </button>
+                        <br><br>
+                        Activates when:
+                        <ol>
+                            <li>
+                                <b>Oxygen Saturation:</b> greater than or equal to 95%
+                            </li>
+                            <li>
+                                <b>Carbon Dioxide:</b> between 23 and 29 mmol/L
+                            </li>
+                            <li>
+                                <b>Heart Rate:</b> between 50 and 110 bpm
+                            </li>
+                            <li>
+                                <b>Systolic Blood Pressure:</b> between 100 and 130 mmHg
+                            </li>
+                            <li>
+                                <b>No Airway Obstruction</b>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 - DEVICE CONTROLS PAGE -->
+
+        <div class = "deviceControlsPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center" id = "patientProfile5">
+                            <h1>
+                                Device Controls For Patient_X
+                            </h1>
+                            <p class = "lead text-muted">
+                                <b>Patient ID:</b> 000024 | <b>File Number:</b> 100024
+                                <br>
+                                <b>Age:</b> 23 | <b>Gender:</b> Male | <b>Blood Type:</b> B+ | <b>Marital Status:</b> Single
+                                <br>
+                                <b>Email:</b> X@gmail.com | <b>Phone Number:</b> 123-456-7890
+                                <br>
+                                <b>Address:</b> 1000 Hilltop Circle, Baltimore, Maryland 21250, United States
+                            </p>
+                            <p>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(3);">
+                                    Vitals
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(4)">
+                                    Charts
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(5)">
+                                    Lab Results
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(6)">
+                                    Vitals Alert Settings
+                                </a>
+                                <a href = "#" class = "btn btn-secondary mt-2 mb-2" onclick = "revealPage(7)">
+                                    Device Controls
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "labResultsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Ventilator
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <p style = "text-align: center;">
+                                Ventilator Status: <b style = "color: red;" id = "ventilatorStatus">STOPPED</b>
+                                <br>
+                            </p>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col-md-4 text-center">
+                            <p style = "margin-top: 10px;">
+                                Gender:
+                                <input class = "textInp" type = "text" placeholder = "Gender" value = "Male" id = "patientGender">
+                            </p>
+                            
+                        </div>
+                        <div class = "col-md-4 text-center">
+                            <p style = "margin-top: 10px;">
+                                Height:
+                                <input class = "textInp" type = "text" placeholder = "Height" value = "174" id = "patientHeight">
+                                cm
+                            </p>
+                        </div>
+                        <div class = "col-md-4 text-center">
+                            <p style = "margin-top: 10px;">
+                                Weight:
+                                <input class = "textInp" type = "text" placeholder = "Weight" value = "70" id = "patientWeight">
+                                kg
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <p style = "text-align: center;">
+                                <button class = "btn btn-secondary" id = "ventilatorValCalc" onclick = "ventilatorValuesCalculator()">
+                                    Calculate Values
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "row">
+                        <div class = "col-md-12" style = "text-align: center;">
+                            <p style = "margin-top: 30px;">
+                                Select the mode:
+                            </p>
+                            <select name = "VentilatorModes" id = "ventModes" data-placeholder = "SCMV">
+                                <option value = "SCMV">(S)CMV+</option>
+                                <option value = "AC">A/C</option>
+                                <option value = "SIMV_VC">SIMV-VC</option>
+                                <option value = "PCV">PCV</option>
+                                <option value = "SIMV_PC">SIMV-PC</option>
+                                <option value = "PS">PS</option>
+                                <option value = "CPAP">CPAP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "row">
+                        <div class = "col-md-3">
+                            <div class = "ventBox rounded shadow-sm">
+                                <p style = "color: white; font-size: 18px; font-weight: 600; margin: 2%">
+                                    Ppeak
+                                </p>
+                                <p style = "color: white; font-size: 76px; font-weight: bolder; text-align: center;" id = "PPEAK">
+                                    27
+                                    <!--
+                                    <input class = "textInpVent" type = "text" placeholder = "Ppeak" value = "27" id = "PPEAK">
+                                    <input class = "textInpVent" type = "text" placeholder = "ExpMinVol" value = "5.34" id = "EXPMINVOL">
+                                    <input class = "textInpVent" type = "text" placeholder = "VTE" value = "347" id = "VTE">
+                                    <input class = "textInpVent" type = "text" placeholder = "fTotal" value = "16" id = "FTOTAL">
+                                    -->
+                                </p>
+                                <p style = "color: white; font-size: 18px; margin: 2%">
+                                    cmH2O
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "col-md-3">
+                            <div class = "ventBox rounded shadow-sm">
+                                <p style = "color: white; font-size: 18px; font-weight: 600; margin: 2%">
+                                    ExpMinVol
+                                </p>
+                                <p style = "color: white; font-size: 76px; font-weight: bolder; text-align: center;" id = "EXPMINVOL">
+                                    5.34
+                                </p>
+                                <p style = "color: white; font-size: 18px; margin: 2%">
+                                    l/min
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "col-md-3">
+                            <div class = "ventBox rounded shadow-sm">
+                                <p style = "color: white; font-size: 18px; font-weight: 600; margin: 2%">
+                                    VTE
+                                </p>
+                                <p style = "color: white; font-size: 76px; font-weight: bolder; text-align: center;" id = "VTE">
+                                    367
+                                </p>
+                                <p style = "color: white; font-size: 18px; margin: 2%">
+                                    ml
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "col-md-3">
+                            <div class = "ventBox rounded shadow-sm">
+                                <p style = "color: white; font-size: 18px; font-weight: 600; margin: 2%">
+                                    fTotal
+                                </p>
+                                <p style = "color: white; font-size: 76px; font-weight: bolder; text-align: center;" id = "FTOTAL">
+                                    12
+                                </p>
+                                <p style = "color: white; font-size: 18px; margin: 2%">
+                                    b/min
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "row">
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin-top: 25px;" onclick = "decrement(1)">
+                                -
+                            </button>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <p style = "font-size: 20px; margin-bottom: 15px; text-align: center;">
+                                Vt
+                                <br>
+                                <strong id = "VT" style = "font-size: 28px;">341</strong>
+                                <br>
+                                ml
+                            </p>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin-top: 25px;" onclick = "increment(1)">
+                                +
+                            </button>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin-top: 25px;" onclick = "decrement(2)">
+                                -
+                            </button>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <p style = "font-size: 20px; text-align: center;">
+                                PEEP/CPAP
+                                <br>
+                                <strong id = "PEEP" style = "font-size: 28px;">5</strong>
+                                <br>
+                                cmH2O
+                            </p>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin-top: 25px; margin-left: 0px;" onclick = "increment(2)">
+                                +
+                            </button>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin-top: 25px;" onclick = "decrement(3)">
+                                -
+                            </button>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <p style = "font-size: 20px; text-align: center;">
+                                Oxygen
+                                <br>
+                                <strong id = "OXY" style = "font-size: 28px;">22</strong>
+                                <br>
+                                %
+                            </p>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin: 25px 5px 15px 0px" onclick = "increment(3)">
+                                +
+                            </button>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin-top: 25px;" onclick = "decrement(4)">
+                                -
+                            </button>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <p style = "font-size: 20px; text-align: center;">
+                                Rate
+                                <br>
+                                <strong id = "VENTRATE" style = "font-size: 28px;">12</strong>
+                                <br>
+                                b/min
+                            </p>
+                        </div>
+                        <div class = "col-sm-1 mt-5" style = "text-align: center;">
+                            <button class = "btn btn-secondary" style = "margin-top: 25px; margin-left: 0px;" onclick = "increment(4)">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <p style = "text-align: center;">
+                                <button class = "btn btn-outline-secondary" id = "ventilatorConnector" onclick = "connectVentilator()">
+                                    Start Ventilation
+                                </button>
+                            </p>
+                            <p style = "text-align: center;" id = "ventMsg"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "labResultsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 style = "padding: 12px 0px 0px 25px; color: black;">
+                                Infusion Pump
+                            </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <p style = "text-align: center;">
+                            Infusion Status: <b style = "color: red;" id = "infusionStatus">STOPPED</b>
+                            <br>
+                            Total Infused: <b id = "totalInfused">---</b>
+                            <br>
+                            <div style = "text-align: center;" id = "infusionTimer">
+                                Infusion Timer (In Seconds): 
+                                <input class = "infTimer textInpInf" type = "text" id = "secondsInf" placeholder = "Seconds" value = "0">
+                                <div id = "displayInfTimer">Time Left: ---</div>
+                            </div>
+                        </p>
+                        <p style = "text-align: center;">
+                            <button class = "btn btn-secondary" id = "infusionComfirmer" onclick = "calculateInfusionPumpValues()">
+                                Default Values
+                            </button>
+                        </p>
+                        <hr>
+                        <div class = "text-center">
+                            <p style = "text-align: center;">
+                                <p style = "margin: 10px">
+                                    Select the medication:
+                                </p>
+                                <select name = "Medications" id = "medsInf" data-placeholder = "Saline">
+                                    <option value = "Saline">Saline</option>
+                                    <option value = "Adenosine">Adenosine</option>
+                                    <option value = "Amiodarone">Amiodarone</option>
+                                    <option value = "Atropine">Atropine</option>
+                                    <option value = "Bumetanide">Bumetanide</option>
+                                    <option value = "CalciumChloride">Calcium Chloride</option>
+                                    <option value = "CalciumGluconate">Calcium Gluconate</option>
+                                    <option value = "Diltiazem">Diltiazem</option>
+                                    <option value = "Dobutamine">Dobutamine</option>
+                                    <option value = "Dopamine">Dopamine</option>
+                                    <option value = "Epinephrine">Epinephrine</option>
+                                    <option value = "Eptifibatide">Eptifibatide</option>
+                                    <option value = "Esmolol">Esmolol</option>
+                                    <option value = "Etomidate">Etomidate</option>
+                                    <option value = "Fentanyl">Fentanyl</option>
+                                    <option value = "Furosemide">Furosemide</option>
+                                    <option value = "Heparin">Heparin</option>
+                                    <option value = "Insulin">Insulin</option>
+                                    <option value = "Isoproterenol">Isoproterenol</option>
+                                    <option value = "Labetalol">Labetalol</option>
+                                    <option value = "Lidocaine">Lidocaine</option>
+                                    <option value = "Magnesium">Magnesium</option>
+                                    <option value = "Midazolam">Midazolam</option>
+                                    <option value = "Morphine">Morphine</option>
+                                    <option value = "Naloxone">Naloxone</option>
+                                    <option value = "Nesiritide">Nesiritide</option>
+                                    <option value = "Nicardipine">Nicardipine</option>
+                                    <option value = "Nitroglycerin">Nitroglycerin</option>
+                                    <option value = "Nitroprusside">Nitroprusside</option>
+                                    <option value = "Norepinephrine">Norepinephrine</option>
+                                    <option value = "Octreotide">Octreotide</option>
+                                    <option value = "Pancuronium">Pancuronium</option>
+                                    <option value = "Pantoprazole">Pantoprazole</option>
+                                    <option value = "Phenylephrine">Phenylephrine</option>
+                                    <option value = "PotassiumChloride">Potassium Chloride</option>
+                                    <option value = "Propofol">Propofol</option>
+                                    <option value = "Remifentanil">Remifentanil</option>
+                                    <option value = "Vasopressin">Vasopressin</option>
+                                    <option value = "Vecuronium">Vecuronium</option>
+                                </select>
+                            </p>
+                        </div>
+                        <hr>
+                        <div class = "text-center">
+                            <p style = "text-align: center;">
+                                <p>
+                                    Select Dosing Method:
+                                </p>
+                                <select name = "dosingUnit" id = "dosingMethodInf" data-placeholder = "mcg/kg/min">
+                                    <option value = "mcg/kg/min">mcg/kg/min</option>
+                                    <option value = "mg/kg/hr">mg/kg/hr</option>
+                                    <option value = "mg/min">mg/min</option>
+                                    <option value = "mL/min">mL/min</option>
+                                    <option value = "mL/hr">mL/hr</option>
+                                </select>
+                                <div style = "text-align: center; margin: 10px;">
+                                    Enter the Rate: 
+                                    <input class = "infTimer textInpInf" type = "text" id = "rateInf" placeholder = "Rate" value = "0">
+                                </div>
+                                <div style = "text-align: center; margin: 10px;">
+                                    Enter Dosing Weight: 
+                                    <input class = "infTimer textInpInf" type = "text" id = "doseWeightInf" placeholder = "Weight" value = "0">
+                                </div>
+                            </p>
+                        </div>
+                        <hr>
+                        <div class = "text-center">
+                            <button class = "btn btn-outline-success" id = "infusionButton" onclick = "connectInfusionPump()">
+                                Start Infusion
+                            </button>
+                            <button class = "btn btn-outline-danger">
+                                Stop Infusion
+                            </button>
+                        </div>
+                        <div style = "text-align: center;" id = "msgInf"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 - SETTINGS PAGE -->
+
+        <div class = "settingsPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1>
+                                Settings
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class = "settingsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 class = "modeTitle" id = "currMode">
+                                Dark Mode
+                            </h4>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div>
+                            <button class = "btn btn-secondary" style = "margin-left: 0px;" id = "darkModeButton">
+                                Dark Mode
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "settingsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 class = "modeTitle">
+                                Media Audio
+                            </h4>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div>
+                            <p>Min  <input type = "range" min = "0" max = "100" step = "10">  Max</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "settingsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 class = "modeTitle">
+                                Microphone Audio
+                            </h4>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div>
+                            <p>Min  <input type = "range" min = "0" max = "100" step = "10">  Max</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "settingsBox m-3 rounded shadow-sm">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h4 class = "modeTitle">
+                                Language
+                            </h4>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div>
+                            <p>
+                                Select your language:
+                            </p>
+                            <select name = "languages" id = "langSelect" data-placeholder = "English">
+                                <option value = "EN">English</option>
+                                <option value = "AB">Abkhazian</option>
+                                <option value = "AA">Afar</option>
+                                <option value = "AF">Afrikanns</option>
+                                <option value = "SQ">Albanian</option>
+                                <option value = "AM">Amharic</option>
+                                <option value = "AR">Arabic</option>
+                                <option value = "HY">Armenian</option>
+                                <option value = "AS">Assamese</option>
+                                <option value = "AY">Aymara</option>
+                                <option value = "AZ">Azerbaijani</option>
+                                <option value = "BA">Bashkir</option>
+                                <option value = "EU">Basque</option>
+                                <option value = "BN">Bengali, Bangla</option>
+                                <option value = "DZ">Bhutani</option>
+                                <option value = "BH">Bihari</option>
+                                <option value = "BI">Bislama</option>
+                                <option value = "BR">Breton</option>
+                                <option value = "BG">Bulgarian</option>
+                                <option value = "MY">Burmese</option>
+                                <option value = "BE">Byelorussian</option>
+                                <option value = "KM">Cambodian</option>
+                                <option value = "CA">Catalan</option>
+                                <option value = "ZH">Chinese (Mandarin)</option>
+                                <option value = "CO">Corsican</option>
+                                <option value = "HR">Croation</option>
+                                <option value = "CS">Czech</option>
+                                <option value = "DA">Danish</option>
+                                <option value = "NL">Dutch</option>
+                                <option value = "EO">Esperanto</option>
+                                <option value = "ET">Estonian</option>
+                                <option value = "FO">Faeroese</option>
+                                <option value = "FJ">Fiji</option>
+                                <option value = "FI">Finnish</option>
+                                <option value = "FR">French</option>
+                                <option value = "FY">Frisian</option>
+                                <option value = "GD">Gaelic (Scots Gaelic)</option>
+                                <option value = "GL">Galician</option>
+                                <option value = "KA">Georgian</option>
+                                <option value = "DE">German</option>
+                                <option value = "EL">Greek</option>
+                                <option value = "KL">Greenlandic</option>
+                                <option value = "GN">Guarani</option>
+                                <option value = "GU">Gujarati</option>
+                                <option value = "HA">Hausa</option>
+                                <option value = "IW">Hebrew</option>
+                                <option value = "HI">Hindi</option>
+                                <option value = "HU">Hungarian</option>
+                                <option value = "IS">Icelandic</option>
+                                <option value = "IN">Indonesian</option>
+                                <option value = "IA">Interlingua</option>
+                                <option value = "IE">Interlingue</option>
+                                <option value = "IK">Inupiak</option> 
+                                <option value = "GA">Irish</option>
+                                <option value = "IT">Italian</option>
+                                <option value = "JA">Japanese</option>
+                                <option value = "JW">Javanese</option>
+                                <option value = "KN">Kannada</option>
+                                <option value = "KS">Kashmiri</option>
+                                <option value = "KK">Kazakh</option>
+                                <option value = "RW">Kinyarwanda</option>
+                                <option value = "KY">Kirghiz</option>
+                                <option value = "RN">Kirundi</option>
+                                <option value = "KO">Korean</option>
+                                <option value = "KU">Kurdish</option>
+                                <option value = "LO">Laothian</option>
+                                <option value = "LA">Latin</option>
+                                <option value = "LV">Latvian, Lettish</option>
+                                <option value = "LN">Lingala</option>
+                                <option value = "LT">Lithuanian</option>
+                                <option value = "MK">Macedonian</option>
+                                <option value = "MG">Malagasy</option>
+                                <option value = "MS">Malay</option>
+                                <option value = "ML">Malayalam</option>
+                                <option value = "MT">Maltese</option>
+                                <option value = "MI">Maori</option>
+                                <option value = "MR">Marathi</option>
+                                <option value = "MO">Moldavian</option>
+                                <option value = "MN">Mongolian</option>
+                                <option value = "NA">Nauru</option>
+                                <option value = "NE">Nepali</option>
+                                <option value = "NO">Norwegian</option>
+                                <option value = "OC">Occitan</option>
+                                <option value = "OR">Oriya</option>
+                                <option value = "OM">Oromo, Afan</option>
+                                <option value = "PS">Pashto, Pushto</option>
+                                <option value = "FA">Persian</option>
+                                <option value = "PL">Polish</option>
+                                <option value = "PT">Portuguese</option>
+                                <option value = "PA">Punjabi</option>
+                                <option value = "QU">Quechua</option>
+                                <option value = "RM">Rhaeto-Romance</option>
+                                <option value = "RO">Romanian</option>
+                                <option value = "RU">Russian</option>
+                                <option value = "SM">Samoan</option>
+                                <option value = "SG">Sangro</option>
+                                <option value = "SA">Sanskrit</option>
+                                <option value = "SR">Serbian</option>
+                                <option value = "SH">Serbo-Croatian</option>
+                                <option value = "ST">Sesotho</option>
+                                <option value = "TN">Setswana</option>
+                                <option value = "SN">Shona</option>
+                                <option value = "SD">Sindhi</option>
+                                <option value = "SI">Singhalese</option>
+                                <option value = "SS">Siswati</option>
+                                <option value = "SK">Slovak</option>
+                                <option value = "SL">Slovenian</option>
+                                <option value = "SO">Somali</option>
+                                <option value = "ES">Spanish</option>
+                                <option value = "SU">Sudanese</option>
+                                <option value = "SW">Swahili</option>
+                                <option value = "SV">Swedish</option>
+                                <option value = "TL">Tagalog</option>
+                                <option value = "TG">Tajik</option>
+                                <option value = "TA">Tamil</option>
+                                <option value = "TT">Tatar</option>
+                                <option value = "TE">Telugu</option>
+                                <option value = "TH">Thai</option>
+                                <option value = "BO">Tibetan</option>
+                                <option value = "TI">Tigrinya</option>
+                                <option value = "TO">Tonga</option>
+                                <option value = "TS">Tsonga</option>
+                                <option value = "TR">Turkish</option>
+                                <option value = "TK">Turkmen</option>
+                                <option value = "TW">Twi</option>
+                                <option value = "UK">Ukranian</option>
+                                <option value = "UR">Urdu</option>
+                                <option value = "UZ">Uzbek</option>
+                                <option value = "VI">Vietnamese</option>
+                                <option value = "VO">Volapuk</option>
+                                <option value = "CY">Welsh</option>
+                                <option value = "WO">Wolof</option>
+                                <option value = "XH">Xhosa</option>
+                                <option value = "JI">Yiddish</option>
+                                <option value = "YO">Yoruba</option>
+                                <option value = "ZU">Zulu</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9 - ABOUT US PAGE -->
+
+        <div class = "aboutPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1>
+                                About Us
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <div>
+                            <br>
+                            <h4>
+                                Who Are We?
+                            </h4>
+                            <p>
+                                Monitor IO is an application designed to make patient monitoring easy.
+                                <br>
+                                We created this application, because we were determined to create an application that can improve the monitoring of ICU patients.
+                                Our determination started at the beginning of June 2021. Since then, we have been working hard to create something innovating and effective in a short span of time.
+                                We envisioned a future where there are no obstacles that prevent medical professionals from monitoring their patients.
+                                <br>
+                                Thanks to the hard work of our team, we’ve managed to successfully create a wonderful project with a simplistic web interface that supports all devices. 
+                            </p>
+                        </div>
+                        <div>
+                            <br>
+                            <h4>
+                                The Team
+                            </h4>
+                            <p>
+                                Out team was given the title: Team 10. The only members of this team are Atta Navaid and Sam Sessums.
+                                <br>
+                                <h5>
+                                    Atta Navaid (<a href = #>a302@umbc.edu</a>)
+                                    <br>
+                                    <i>Front-End Developer</i><br>
+                                </h5>
+                                A undergraduate computer science student at UMBC with front-end web development skills.
+                                He was tasked with creating the website user interface of this application.
+                                <br><br>
+                                <h5>
+                                    Sam Sessums (<a href = #>s99@umbc.edu</a>)
+                                    <br>
+                                    <i>Back-End Developer</i><br>
+                                </h5>
+                                A undergraduate computer science student at UMBC with back-end web development skills.
+                                He was tasked with connecting the user interface to the patiet database.
+                            </p>
+                        </div>
+                        <div>
+                            <br>
+                            <h4>
+                                Community
+                            </h4>
+                            <p>
+                                Monitor IO was designed by UMBC students. So the first few users of Monitor IO are all from UMBC.
+                                <br>
+                                From all the support and encouragement we received at UMBC, we decided to reach further and bring the support and care we received from the community of UMBC, to more people.
+                                As our community expands, more and more patients get the care and management they really deserve and need to improve their health.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10 - CONTACT US PAGE -->
+
+        <div class = "contactPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1>
+                                Contact Us
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class = "m-3 rounded shadow-sm" id = "contactUsBox">
+                    <div class = "bg-white">
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <h4 style = "padding: 12px 0px 0px 25px;">
+                                    How Can We Help?
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div style = "margin: 25px;">
+                        <div class = "row">
+                            <div class = "col-md-6">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        First name
+                                    </p>
+                                    <input type = "text" class = "textInp" placeholder = "First name" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                            <div class = "col-md-6">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        Last name
+                                    </p>
+                                    <input type = "text" class = "textInp" placeholder = "Last name" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        Email address
+                                    </p>
+                                    <input type = "text" class = "textInp center-block" placeholder = "Email address" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <div>
+                                    <p style = "margin-bottom: 4px;">
+                                        Message
+                                    </p>
+                                    <input type = "text" class = "textInp center-block" placeholder = "Message" style = "margin-bottom: 25px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class = "btn btn-secondary" style = "margin-left: 0px;" onclick = "" id = "sendMessageButton">
+                                Send Message
+                            </button> 
+                        </div>
+                    </div>
+                </div>
+                <div class = "row m-3">
+                    <div class = "col-md-8 rounded shadow-sm" id = "contactUsBox">
+                        <h4 style = "padding: 12px 0px 0px 12px;">
+                            Our Address
+                        </h4>
+                        <p style = "padding: 0px 0px 0px 12px;">
+                            Emergency Health Services UMBC <br>
+                            1000 Hilltop Circle <br>
+                            Baltimore, MD  21250 <br>
+                            USA <br>
+                            Phone: +1 410-455-3223 <br>
+                            Fax: 410-455-1125 <br>
+                            Email: <a href = "#">uhs@umbc.edu</a> <br>
+                            Times: Mon – Fri: 8:30 AM – 5 PM EDT <br>
+                        </p>
+                    </div>
+                    <div class = "col-md-4" style = "margin: 10px 0px 10px 0px;">
+                        <img src = "Icons/uhs.jpg" alt = "AddressImage" width = "390" height = "140">
+                        <img src = "Icons/uhs2.png" alt = "AddressImage2" width = "390" height = "140">
+                    </div>  
+                </div>
+                <div class = "row m-3">
+                    <div class = "col-md-12 rounded shadow-sm" id = "contactUsBox">
+                        <h4 style = "padding: 12px 0px 0px 12px;">
+                            Our Emails
+                        </h4>
+                        <p style = "padding: 0px 0px 0px 12px;">
+                            Atta Navaid: <a href = "#">a302@umbc.edu</a> <br>
+                            Sam Sessums: <a href = "#">s99@umbc.edu</a> <br>
+                        </p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <!-- 11 - FAQ PAGE -->
+
+        <div class = "faqPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1>
+                                Frequently Asked Questions
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <div>
+                            <hr>
+                            <p class = "faqQnA">
+                                <b>
+                                    Q: How do I use the services offered by this application?
+                                </b>
+                                <br>
+                                    A: All you have to do is sign up or login, and get verified by the system as a user who is allowed to use the services offered by this application!
+                                <hr>
+                            </p>
+                            <p class = "faqQnA">
+                                <b>
+                                    Q: How do I view the vitals of a patient?
+                                </b>
+                                <br>
+                                    A: To view the vitals of a certain patient, you need to be verified by the system as:
+                                    <ol>
+                                        <li>A medical professional designated to that certain patient</li>
+                                        <li>A social worker designated to that certain patient</li>
+                                        <li>That very certain patient</li>
+                                    </ol>
+                                    Then click the "Patients" link on the navigation bar and search for that certain patient.
+                                    Enter the authorization code for the admitted patient and you will arrive immediately at the vitals for that certain patient.
+                                <hr>
+                            </p>
+                            <p class = "faqQnA">
+                                <b>
+                                    Q: How do I view the files of a patient as a medical professional?
+                                </b>
+                                <br>
+                                    A: To view files of a patient, you need to be verified by the system as a medical professional.
+                                    Once you are verified, you can view a patient's file if you are that patient's designated physician.
+                                <hr>
+                            </p>
+                            <p class = "faqQnA">
+                                <b>
+                                    Q: How do I view the files of a patient as a social worker?
+                                </b>
+                                <br>
+                                    A: To view files of a patient, you need to be verified by the system as a social worker.
+                                    Once you are verified, you can view a patient's file if you are that patient's designated social worker.
+                                <hr>
+                            </p>
+                            <p class = "faqQnA">
+                                <b>
+                                    Q: How do I view the files of a patient as an admitted patient?
+                                </b>
+                                <br>
+                                    A: To view files of a patient, you need to be verified by the system as an admitted patient.
+                                    Once you are verified, You can view your own files that we have on record.
+                                <hr>
+                            </p>
+                            <p class = "faqQnA">
+                                <b>
+                                    Q: How do I update patient information?
+                                </b>
+                                <br>
+                                    A: To update the files of a patient, you need to be verified by the system as a medical professional.
+                                    Once you are verified, you can open your patient's file, navigate to what you want to change.
+                                    Then simply click the "Edit" button to modify information. The system will save the information and update it after your session.
+                                <hr>
+                            </p>
+                            <p class = "faqQnA">
+                                <b>
+                                    Q: Is it possible to update patient information as a social worker or patient?
+                                </b>
+                                <br>
+                                    A: Updating patient information on the website as a social worker or patient requires authorization.
+                                    This can be done through lab results or the submission of a few documents in-person or online via the system.
+                                <hr>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12 - PRIVACY POLICY PAGE -->
+
+        <div class = "privacyPolicyPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1>
+                                Privacy Policy
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "privacyPolicyParagraph">
+                            <p>
+                                <h4 style = "color: navy;" id = "commitmentStatement">
+                                    Monitor IO is committed to respecting and protecting your privacy.
+                                </h4>
+                                <br>
+                                This Policy explains when and why we collect personal information about people who visit our website, 
+                                how we use it, the conditions under which we may disclose it to others and how we keep it secure.
+                                <br><br>
+                                We may change this Policy from time to time so please check this page occasionally to ensure that you’re happy with any changes. 
+                                By using our website, you’re agreeing to be bound by this Policy. 
+                                We last updated this privacy policy on 5th July 2021.
+                                <br><br>
+                                Any questions regarding this Policy and our privacy practices should be sent by email to <a href = "#">uhs@umbc.edu</a> 
+                                or by writing to us via the <a href = "#" onclick = "revealPage(10)">Contact Us Page</a>. 
+                                Alternatively, you can telephone 410-455-3223.
+                                <br><br><br>
+                                <h5>
+                                    Consent to our use of your personal data
+                                </h5>
+                                Whenever you give us personal data, you are consenting to its collection and use in accordance with this privacy policy, 
+                                including our use of cookies as explained below.
+                                <br><br><br>
+                                <h5>
+                                    How do we collect information from you?
+                                </h5>
+                                We obtain information about you when you use our website, for example, when you contact us about products and services, 
+                                if you register to receive one of our newsletters, if you comment on a blog post 
+                                or if you register to take part in one of our online or in-person events.
+                                <br><br><br>
+                                <h5>
+                                    What type of information is collected from you?
+                                </h5>
+                                When you visit our website, we log your Internet Protocol (IP) address, 
+                                that is a string of numbers unique to your computer that is recorded by our web server when you request any page or component on our website.  
+                                We use this to receive and send information from and to you over the internet and to monitor your use of our website.
+                                <br><br>
+                                When you contact us about the supply of any of our goods or services, make an enquiry or ask us for information, 
+                                you will be asked to provide some personal data (such as your name, business or billing address, telephone number, e-mail address).
+                                <br><br>
+                                We may use information about you from credit reference agencies and fraud prevention agencies.
+                                <br><br>
+                                We also automatically collect data about visitors to our website (for example on browsing patterns) by using Cookies. 
+                                These data allow us to recognise you and your preferred settings and avoid 
+                                you having to re-enter information when you visit this website in future. 
+                                (See below for more information on cookies.)
+                                <br><br>
+                                No sensitive information is collected through our website.
+                                <br><br><br>
+                                <h5>
+                                    How is your information used?
+                                </h5>
+                                When we seek your permission. 
+                                Often, we will be using your information in accordance with your specific consent or instructions: 
+                                for example, because you have requested or consented to receiving certain information 
+                                or entered into a contract with us for goods and services.
+                                <br><br>
+                                At other times we will use your information on one of the other lawful bases described below in this section.
+                                <br><br>
+                                Contract.
+                                <br><br>
+                                <ol>
+                                    <li>
+                                        When you enter into a contract for goods or services with us, or where you wish to register an interest in doing so, 
+                                        we will use your personal data to enter and fulfil our contractual relationship with you.
+                                    </li>
+                                    <li>
+                                        Fulfilling our contract with you means being able to manage and administer our services, 
+                                        and maintain our standards of tailored service levels, customer care and consumer compliance. 
+                                        This might include fulfilling orders or returns, processing payments or refunds, and providing aftercare, 
+                                        as well as improving your customer experience online and otherwise, 
+                                        including by monitoring service levels and responding to feedback.
+                                    </li>
+                                </ol>
+                                Legitimate interests.
+                                <br><br>
+                                Other uses of your information are made for ordinary and transparent purposes 
+                                which we think are necessary for our legitimate interests as a provider of healthcare technology. 
+                                We use your information on this basis to do the following:
+                                <br><br>
+                                <ol>
+                                    <li>
+                                        Recognise and remember you when you visit our website and better understand how you use our website 
+                                        and others by using cookies to follow your use. (See below for explanation of ‘Cookies’)
+                                    </li>
+                                    <li>
+                                        Keep you updated on any services you have subscribed to, or any products you have purchased, 
+                                        and/or about similar services unless you have told us otherwise 
+                                        (including where we are working alongside other Service Providers to provide these services)
+                                    </li>
+                                    <li>
+                                        Contact you to let you know about any of our products, services or promotions 
+                                        (which may in some cases be provided by third parties), including by email, mail, 
+                                        telephone, or SMS text message, always having regard to your preferences.
+                                    </li>
+                                    <li>
+                                        Collect and log numeric internet addresses to improve the website and to monitor website usage.
+                                    </li>
+                                </ol>
+                                Some limited uses of your data are required to comply with legal obligations, for example fraud detection and taxation.
+                                <br><br>
+                                We review our retention periods for personal information on a regular basis. 
+                                We will hold your personal information on our systems for as long as is necessary for the relevant activity, 
+                                or as long as is set out in any relevant contract you hold with us.
+                                <br><br><br>
+                                <h5>
+                                    Who has access to your information?
+                                </h5>
+                                We may disclose your personal data to anyone who needs those data to fulfil your requests for goods, 
+                                services and information. Some of these people may be located outside the European Economic Area.
+                                <br><br>
+                                We may also provide your personal data to anyone who buys our business or business assets.
+                                <br><br>
+                                Except as set out above, we will not disclose your personal data unless we are obliged to do so or allowed to do so by law, 
+                                or where we need to do so to run our business (for instance where we outsource services or other people who process data for us).
+                                <br><br><br>
+                                <h5>
+                                    Your choices
+                                </h5>
+                                You have a choice about whether or not you wish to receive information from us. 
+                                If you do not want to receive direct marketing communications from us then you can select your choices 
+                                by ticking the relevant boxes situated on the form on which we collect your information.
+                                <br><br>
+                                We will not contact you for marketing purposes by email, phone or text message unless you have given your prior consent. 
+                                We will not contact you for marketing purposes by post if you have indicated that you do not wish to be contacted. 
+                                You can change your marketing preferences at any time by contacting us by email at <a href = "#"> uhs@umbc.edu</a>
+                                or alternatively you can write to us at Emergency Health Services, 1000 Hilltop Circle, Baltimore, MD.
+                                <br><br><br>
+                                <h5>
+                                    How you can access and update your information
+                                </h5>
+                                You have the right to request a copy of the personal data which we hold about you. 
+                                If you would like a copy of some or all of your personal data, please contact <a href = "#">uhs@umbc.edu </a>
+                                or alternatively you should write to us at Emergency Health Services, 1000 Hilltop Circle, Baltimore, MD.
+                                <br><br>
+                                We would like to keep your personal data accurate and up to date. 
+                                If you become aware of any errors or inaccuracies, please let us know by contacting uhs@umbc.edu
+                                or alternatively you may write to us at Emergency Health Services, 1000 Hilltop Circle, Baltimore, MD.
+                                <br><br><br>
+                                <h5>
+                                    Security precautions in place to protect the loss, misuse or alteration of your information
+                                </h5>
+                                When you give us personal information, we take steps to ensure that it’s treated securely. 
+                                Any sensitive information, including email addresses and phone numbers, are encrypted through TLS. 
+                                When you are on a secure page, a lock icon will appear on the bottom of web browsers such as Microsoft Internet Explorer.
+                                <br><br>
+                                Unfortunately, no data transmission over the internet or any other network can be guaranteed as 100% secure. 
+                                As a result, while we strive to protect your personal information, 
+                                we cannot guarantee the security of any information you transmit to us, and you do so at your own risk. 
+                                Once we receive your information, we make our best effort to ensure its security on our systems. 
+                                Where we have given (or where you have chosen) a password which enables you to access certain parts of our websites, 
+                                you are responsible for keeping this password confidential. We ask you not to share your password with anyone.
+                                <br><br><br>
+                                <h5>
+                                    Profiling
+                                </h5>
+                                We may analyse your personal information to create a profile of your interests and preferences so that 
+                                we can contact you with information relevant to you. We may make use of additional information about you 
+                                when it is available from external sources to help us do this effectively. 
+                                We do not use automated decision making without your consent. 
+                                We may also use your personal information to detect and reduce fraud and credit risk.
+                                <br><br><br>
+                                <h5>
+                                    Use of ‘cookies’
+                                </h5>
+                                A cookie is a small piece of data or message that is sent from a web server to your browser and is stored on your hard drive. 
+                                It is used to collect standard internet log information and visitor behaviour information.
+                                <br><br>
+                                A cookie can’t read data off your hard disk or read cookie files created by other sites. 
+                                Cookies do not damage your system. For further information visit www.aboutcookies.org or www.allaboutcookies.org.
+                                <br><br>
+                                You can reset your browser to refuse cookies or to alert you to when a cookie is being sent. 
+                                For information about this look in your browser’s ‘help’ facility. 
+                                The above websites also tell you how to remove cookies from your browser.
+                                <br><br>
+                                If you choose not to accept our cookies, some of the features of our website may not work as well as we intend.
+                                <br><br>
+                                We use the following cookies:
+                                <br><br>
+                                <ul>
+                                    <li>
+                                        Advertising cookies – these cookies are used to make advertising messages more relevant to you – 
+                                        Google Adwords, Facebook Custom Audience, LinkedIn Ads, Twitter Ads
+                                    </li>
+                                    <li>
+                                        Analytics and customization cookies – these cookies collect information that is used either in aggregate form, 
+                                        to help us improve our website or our marketing campaigns, 
+                                        or to help us customize our Websites for you – Intercom, LeadLiaison, LeadForensics
+                                        
+                                    </li>
+                                </ul>
+                                We use cookies for the purposes of system administration of our website, 
+                                to give us information about the number of visitors to different parts of our website, 
+                                and to enhance your visit to our website.
+                                <br><br><br>
+                                <h5>
+                                    Links to other websites
+                                </h5>
+                                Our website may contain links to other websites run by other organisations. 
+                                This privacy policy applies only to our website‚ so we encourage you to read the privacy statements on the other websites you visit. 
+                                We cannot be responsible for the privacy policies and practices of other sites even if you access them using links from our website.
+                                <br><br>
+                                In addition, if you linked to our website from a third party site, 
+                                we cannot be responsible for the privacy policies and practices of the owners and operators of that third party site 
+                                and recommend that you check the policy of that third party site.
+                                <br><br><br>
+                                <h5>
+                                    16 or Under
+                                </h5>
+                                We are concerned to protect the privacy of children aged 16 or under. 
+                                If you are aged 16 or under‚ 
+                                please get your parent/guardian’s permission beforehand whenever you provide us with personal information.
+                                <br><br><br>
+                                <h5>
+                                    Transferring your information outside of Europe
+                                </h5>
+                                As part of the services offered to you through this website, 
+                                the information which you provide to us may be transferred to countries outside the European Union (“EU”). 
+                                By way of example, this may happen if any of our servers are from time to time located in a country outside of the EU. 
+                                These countries may not have similar data protection laws to the UK. 
+                                By submitting your personal data, you’re agreeing to this transfer, storing or processing. 
+                                If we transfer your information outside of the EU in this way, we will take steps to ensure that 
+                                appropriate security measures are taken with the aim of ensuring that your privacy rights 
+                                continue to be protected as outlined in this Policy.
+                                <br><br>
+                                Where we transfer data outside of the EEA, we will ensure we have appropriate contractual data protection clauses in place with all providers. 
+                                We generally only transfer data to providers who have signed up to the EU-US Privacy Shield agreement.
+                                <br><br><br>
+                                <h5>
+                                    Website recording
+                                </h5>
+                                Our web site may use a number of analytics tools and recording services. These services may record mouse clicks, 
+                                mouse movements, page scrolling and any text keyed into website forms. Data collected is for Current’s internal use only. 
+                                The information collected is used to improve our website usability and is stored and used for aggregated and statistical reporting.
+                                <br><br><br>
+                                <h5>
+                                    If you don’t feel we are adhering to this Policy, what should you do?
+                                </h5>
+                                You have the following rights:
+                                <br>
+                                <ol>
+                                    <li>
+                                        To obtain access to, and copies of, the personal data that we hold about you, 
+                                        or require that it is transmitted to another data controller; 
+                                        (Please note that a £10 fee may be payable if the request is unfounded, repetitive or excessive)
+                                    </li>
+                                    <li>
+                                        To request that we restrict our data processing activities or cease processing your personal data in certain ways, 
+                                        for example because you do not consider it lawful;
+                                    </li>
+                                    <li>
+                                        To require us not to send you marketing communications;
+                                    </li>
+                                    <li>
+                                        To withdraw your consent, where we are relying on it to process your personal data;
+                                    </li>
+                                    <li>
+                                        To object to how we process your personal data, in particular where we are relying on our legitimate interests; and
+                                    </li>
+                                    <li>
+                                        To ask us to erase the personal data we hold about you, for example because it is causing you distress, 
+                                        or you believe it to be no longer relevant, or to correct the information if it is incorrect.
+                                    </li>
+                                </ol> 
+                                Please note that the above rights are not absolute, 
+                                and we will be entitled to refuse requests where exceptions apply. 
+                                You can find out more about your rights at www.ico.org.uk.
+                                <br><br>
+                                If you believe that we have not adhered to this Policy, 
+                                please notify us by email at <a href = "#">uhs@umbc.edu</a> and we will try to solve the problem promptly. 
+                                If you are not satisfied with our response, or have any other queries, 
+                                you can also contact the Information Commissioner at www.ico.org.uk or 0303 123 1113.
+                                <br><br><br>
+                                <h5>
+                                    How to contact us
+                                </h5>
+                                If you have any questions about this privacy policy or any personal data which we hold about you, 
+                                please contact us via the <a href = "#" onclick = "revealPage(10)">Contact Us Page</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13 - PROFILE PAGE -->
+
+        <div class = "profilePage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1>
+                                Profile
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-lg-4 mt-4">
+                        <div class = "rounded shadow-sm" id = "displayBox2">
+                            <div class = "row">
+                                <div class = "col-lg-3"></div>
+                                <div class = "col-lg-3 text-center">
+                                    <img src = "Icons/ProfilePicture.png" class = "rounded-circle" id = "profPic">
+                                </div>
+                            </div>
+                            <div style = "padding-bottom: 10px;">
+                                <div class = "text-center">
+                                    <h3 id = "profileName">
+                                        Dr. X<span class = "font-weight-light">, MBBS</span>
+                                    </h3>
+                                    <h5 id = "profileRole">
+                                        Physician
+                                    </h5>
+                                    <p style = "font-size: 18px;" id = profileProvider >
+                                        <b>Location:</b> Emergency Health Services UMBC 
+                                    </p>
+                                    <hr>
+                                    <p>
+                                        <i>"Medicines cure diseases, but doctors cure patients." - <b>Carl Jung</b></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col-lg-8 mt-4">
+                        <div class = "rounded shadow-sm" id = "displayBox2">
+                            <div class = "bg-white">
+                                <div class = "row">
+                                    <div class = "col-8">
+                                        <h3>
+                                            Account Information
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "profilePageInfo">
+                                <h6 class = "text-muted">
+                                    User Information
+                                </h6>
+                                <div class = "row">
+                                    <div class = "col-lg-6">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                Email address
+                                            </p>
+                                            <input id = "profileEmail" type = "text" class = "textInp center-block" placeholder = "Email address" value = "X@gmail.com" style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                    <div class = "col-lg-6">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                Nickname
+                                            </p>
+                                            <input id = "profileNick" type = "text" class = "textInp" placeholder = "Nickname" value = "X" style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-lg-6">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                First name
+                                            </p>
+                                            <input id = "profileFirstName" type = "text" class = "textInp" placeholder = "First name" value = "Dr." style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                    <div class = "col-lg-6">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                Last name
+                                            </p>
+                                            <input id = "profileLastName" type = "text" class = "textInp" placeholder = "Last name" value = "X" style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class = "profilePageInfo">
+                                <h6 class = "text-muted">
+                                    Contact Information
+                                </h6>
+                                <div class = "row">
+                                    <div class = "col-lg-12">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                Address
+                                            </p>
+                                            <input id = "profileAddress" type = "text" class = "textInp" placeholder = "Home address" value = "1000 Hilltop Circle" style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-lg-4">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                City
+                                            </p>
+                                            <input id = "profileCity" type = "text" class = "textInp" placeholder = "City" value = "Baltimore" style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                    <div class = "col-lg-4">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                Country
+                                            </p>
+                                            <input id = "profileCountry" type = "text" class = "textInp" placeholder = "Country" value = "United States" style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                    <div class = "col-lg-4">
+                                        <div>
+                                            <p style = "margin-bottom: 4px;">
+                                                Zip Code
+                                            </p>
+                                            <input id = "profileZip" type = "text" class = "textInp" placeholder = "Zip code" value = "21250" style = "margin-bottom: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class = "profilePageInfo">
+                                <div>
+                                    <button class = "btn btn-secondary" style = "margin-left: 0px;" onclick = "" id = "saveChangesButton">
+                                        Save changes
+                                    </button> 
+                                    <button class = "btn btn-secondary" style = "margin-left: 0px;" onclick = "" id = "saveChangesButton">
+                                        Delete profile
+                                    </button> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14 - TERMS OF SERVICE PAGE -->
+
+        <div class = "tosPage specialPage">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <div class = "text-center">
+                            <h1>
+                                Terms of Service
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class = "container">
+                    <p style = "text-align: center;">
+                        <strong>
+                            Last Revised: July 6, 2021
+                        </strong>
+                    </p>
+                    <div class = "tosContent">
+                        <h5 style = "text-align: center;">
+                            <strong>
+                                IMPORTANT – PLEASE READ CAREFULLY BEFORE USING MONITORIO
+                            </strong>
+                        </h5>
+                        <br>
+                        <p>
+                            <strong>BY CLICKING</strong> “<strong>I ACCEPT</strong>,” <strong>OR BY DOWNLOADING, INSTALLING, OR OTHERWISE 
+                            ACCESSING OR USING Monitor IO (the “Services”)</strong>, YOU AGREE THAT YOU HAVE READ AND UNDERSTOOD, AND YOU 
+                            AGREE TO BE BOUND BY, THE FOLLOWING TERMS AND CONDITIONS, INCLUDING Monitor IO’S PRIVACY POLICY (TOGETHER 
+                            REFERRED TO AS THE “<strong>TERMS</strong>”). IF YOU ARE NOT ELIGIBLE, OR DO NOT AGREE TO THE TERMS, THEN 
+                            YOU DO NOT HAVE OUR PERMISSION TO USE THE SERVICES, AND YOU SHOULD NOT LOG ON OR OTHERWISE USE THE SERVICES. 
+                            YOUR USE OF THE SERVICES, AND Monitor IO’S PROVISION OF THE SERVICE TO YOU, CONSTITUTES AN AGREEMENT BY 
+                            Monitor IO AND BY YOU TO BE BOUND BY THESE TERMS.
+                        </p>
+                        <p>
+                            <strong>By continuing to use the Services, you agree as follows:</strong>
+                        </p>
+                        <ul>
+                            <li>
+                                Any information that Monitor IO collects through your use of the Services is 
+                                subject to the Monitor IO Privacy Policy, which is part of these Terms of Use.
+                            </li>
+                            <li>
+                                You are at least 18 years old or have been legally emancipated;
+                            </li>
+                            <li>
+                                You understand and intend that this Agreement is a legally binding 
+                                agreement and the equivalent of a signed, written contract;
+                            </li>
+                            <li>
+                                You will use the Services in a manner consistent with applicable laws 
+                                and regulations and these Terms of Use, as they may be amended by 
+                                Monitor IO from time to time; and
+                            </li>
+                            <li>
+                                You understand, accept, and have received these Terms, and acknowledge 
+                                and demonstrate that you can access these Terms at will.
+                            </li>
+                        </ul>
+                        <p>IF YOU DO NOT AGREE WITH AND ACCEPT THESE TERMS, PLEASE DISCONTINUE ALL FURTHER USE OF THE SERVICES. DO NOT LOG IN TO THE SYSTEM AND IMMEDIATELY DELETE ALL INSTALLED FILES, IF ANY, OF THE ACCOMPANYING SERVICES AND MATERIALS FROM YOUR COMPUTER OR MOBILE DEVICE.</p>
+                        <p><strong>ARBITRATION NOTICE</strong>: UNLESS YOU OPT-OUT AND EXCEPT FOR CERTAIN TYPES OF DISPUTES DESCRIBED IN THE ARBITRATION SECTION BELOW, YOU AGREE THAT DISPUTES BETWEEN YOU AND Monitor IO WILL BE RESOLVED BY BINDING, INDIVIDUAL ARBITRATION. YOU WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION. YOU CAN OPT OUT OF THE AGREEMENT TO ARBITRATE BY CONTACTING <a href="mailto:info@Monitor IO.health">info@Monitor IO.health</a> WITHIN 30 DAYS OF ACCEPTING THESE TERMS.</p>
+                        
+                        <h2 style = "text-align: center;"><strong>TERMS OF USE</strong></h2>
+                        <p><strong>These Terms of Use are a legal contract</strong> between You (“you/your” or “User”) and Monitor IO, INC. (“Monitor IO” or “we”) and govern your use of the Services and all of the text, data, information, software, graphics, photographs, functionality, services and more (all of which we refer to as “Materials”) that we may make available to you through the software, whether you access the software through the patient portal on the <a href="https://www.Monitor IO.health/">www.Monitor IO.health</a> (“Website”) or our mobile application (the “Application” or the “App”). The Services are owned by Monitor IO, INC. and its subsidiaries or afﬁliates involved in providing and supporting the Services (collectively, “We”, “Our” or “Monitor IO”). The website and the mobile application are all referred to as the “Services” in these Terms. These terms apply to you as a user of the Services. These terms do NOT apply to your use of any Devices used in conjunction with the Services. Your use of the Devices will be governed by separate terms of use. Please review the applicable terms of use prior to using any Device.</p>
+                        
+                        <p><strong>SERVICES OVERVIEW</strong></p>
+                        <p>Monitor IO is an application services provider of web-based patient engagement and remote patient monitoring services through a portal and platform for doctors and patients.</p>
+                        <p>NOTE: Monitor IO is not a healthcare provider nor do we provide any direct healthcare services. We are not a health insurance company and we are not licensed to sell health insurance.</p>
+                        
+                        <p><strong>SMS SERVICES</strong></p>
+                        <p>By requesting communication via the Monitor IO SMS messaging service, you acknowledge that you agree to receive text messages as part of the Monitor IO Connect Program, with an estimated message frequency of 1 message per day relating to your care plan protocol.&nbsp; The Monitor IO Connect protocol is meant to keep you on track for your health care objectives and provide a way for you to communicate directly with your care team.</p>
+                        <p>You may use the following as part of your communication: reply HELP for help and reply STOP to stop.&nbsp; A link to the Monitor IO Privacy Policy may be found here.</p>
+                        <p><strong>Disclosure: Message and data rates may apply.&nbsp;</strong></p>
+                        <p><strong>Carriers are not liable for delayed or undelivered messages.</strong></p>
+                         
+                        <p><strong>We Do NOT Provide Medical Advice</strong></p>
+                        <p>Our Services provide an online option for communicating with your Providers about medical conditions that are not serious or life threatening and do not present an emergency. It is NOT intended for use in connection with active patient monitoring to allow immediate clinical action or continuous monitoring by a health care provider or the patient. If at any time you are concerned about your care or the treatment, or you believe or someone else advises you that you have a serious or life-threatening condition, <strong>call 9-1-1 immediately</strong> in areas where that service is available, or go to the nearest open clinic or emergency room.</p>
+                        <p>THE SERVICES CANNOT AND ARE NOT DESIGNED, INTENDED OR APPROPRIATE TO REPLACE THE RELATIONSHIP YOU HAVE WITH YOUR HEALTHCARE PROVIDERS OR TO ADDRESS SERIOUS, EMERGENCY, OR LIFE-THREATENING MEDICAL CONDITIONS AND SHOULD NOT BE USED IN THOSE CIRCUMSTANCES. YOU SHOULD ALWAYS TALK TO YOUR HEALTHCARE PROVIDERS FOR DIAGNOSIS AND TREATMENT, INCLUDING INFORMATION REGARDING WHICH DRUGS, THERAPY, OR OTHER TREATMENT MAY BE APPROPRIATE FOR YOU.</p>
+                        <p>Your Provider will base their medical advice on the personal health data you provide through the Services and the data transmitted from your Devices. If you do not provide complete and accurate personal health data, the medical advice you receive may not be correct. Any content provided or accessed through the Services, including without limitation information provided by Monitor IO’s staff in response to questions you may submit through the Services, is for informational purposes only, and is not intended to cover all possible uses, directions, precautions, drug interactions, or adverse effects. Please consult your doctor or other qualiﬁed health care provider if you have any questions about a medical condition, or before taking any drug, changing your diet, or commencing or discontinuing any course of treatment. Never disregard, avoid, or delay in obtaining medical advice from a doctor or other qualified healthcare provider because of something posted on our Services.</p>
+                        <p>THE FACT THAT YOUR PROVIDER IS USING OUR SERVICES DOES NOT MEAN THAT Monitor IO ENDORSES OR RECOMMENDS THE PROVIDER, AND WE DO NOT CONFIRM THE CREDENTIALS OF ANY PROVIDERS. WE DO NOT CONTROL THE MEDICAL ADVICE YOUR HEALTHCARE PROVIDER GIVES YOU, AND WE DO NOT HAVE ACCESS TO OR USE ANY OF THAT ADVICE. IT IS YOUR RESPONSIBILITY TO SEPARATELY CONFIRM THAT A HEALTHCARE PROVIDER IS PROPERLY LICENSED.</p>
+                        <p>Monitor IO is not liable in any way for any malpractice or substandard treatment your Provider may provide. You are using the Services at your own risk.</p>
+                         
+                        <p><strong>Your Account and Your Use of the Services</strong></p>
+                        <p>In order to have access to the Services, you must register to create an account and become a “Registered User” to use the Services. To register, you must provide a user name, a PIN, your email address, and other information specified in the registration form.</p>
+                        <p>You may change or correct information from your account by logging into your User account directly and making the desired changes. You agree not to register for a User account on behalf of an individual other than yourself unless you are authorized to bind such person to these Terms. By registering another person, you hereby represent that you are authorized to do so.</p>
+                        
+                        <p><strong>By registering for an account, you represent and warrant</strong>:</p>
+                        <p>(A) your registration data is true, accurate, current, and complete.</p>
+                        <p>(B) You are at least 18 years of age.</p>
+                        <p>(C) You will update your registration data to make sure it is accurate.</p>
+                        <p>(D) You are authorized to create an account (either for yourself or on behalf of another person).</p>
+                        <p>DO NOT USE THE SERVICES WHERE PROHIBITED BY LAW. YOU UNDERSTAND THAT YOUR USE OF THE SERVICES MAY INVOLVE OR REQUIRE THE TRANSMISSION OF SIGNIFICANT AMOUNTS OF DATA. YOU ARE RESPONSIBLE FOR ALL DATA CHARGES THAT MAY BE CHARGED BY YOUR WIRELESS CARRIER OR INTERNET SERVICE PROVIDER OR THAT MAY OTHERWISE ARISE FROM YOUR USE OF THE SERVICES.</p>
+                         
+                        <p><strong>We Have the Right to Change These Terms of Use</strong></p>
+                        <p>We may, at any time, modify, discontinue or terminate the Services or modify these Terms, without prior notice to you. If we modify these Terms, we will post the changes on our website or Application. If you continue to use the Services after we have let you know about the changes, you agree to be bound by the modified Terms. If the changes are not acceptable to you, you should immediately stop using the Services.</p>
+                        <p>Some features of the Services may be subject to different terms and conditions. If you use those features, you agree to be bound by the additional terms of use applicable to such features. If any such additional terms conflict with these Terms, the additional terms will govern with respect to such features.</p>
+                        
+                        <p><strong>Keeping Your Information Secure</strong></p>
+                        <p>You need to provide Monitor IO with a valid, working e-mail address to access and use the Services. When you register, Monitor IO will provide you a PIN. Your e-mail address and PIN and any codes assigned to you are your “User Information.” When you create an account with us, you guarantee that the information you provide is accurate, complete, and current.</p>
+                        <p>You MUST:</p>
+                        <p>(A) Keep your User Information private, and</p>
+                        <p>(B) Not allow another person to use your User Information to access the Services, and</p>
+                        <p>(C) Not allow another person to use your Device(s).</p>
+                        <p>To protect your conﬁdential healthcare information, it is good practice to enable touch ID, ﬁngerprint ID, and/or a passcode on your smartphone.</p>
+                        <p>If you do not do the above and Monitor IO suffers damages as a result, you will be responsible for all of those damages. <strong>You agree to immediately notify Monitor IO in writing by email of any unauthorized use of your User Information or any other breach of security</strong>.</p>
+                        <p>All of your communications using the Services can and will be monitored, captured, recorded, and transmitted to government authorities without notifying you if we determine that this is necessary.</p>
+                        
+                        <p><strong>Links to Other Websites</strong></p>
+                        <p>Our Service may contain links to third party web sites or services that are not owned or controlled by us.</p>
+                        <p>We have no control over, and we assume no responsibility for, the content, privacy policies, or practices of any third-party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites. We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.</p>
+                        <p>YOU AGREE THAT Monitor IO WILL NOT, UNDER ANY CIRCUMSTANCES, BE RESPONSIBLE OR LIABLE, DIRECTLY OR INDIRECTLY, FOR ANY GOODS, SERVICES, INFORMATION, RESOURCES AND/OR CONTENT AVAILABLE ON OR THROUGH ANY THIRD-PARTY SITES, OR FOR ANY DAMAGES OR LOSSES CAUSED OR ALLEGED TO BE CAUSED BY OR IN CONNECTION WITH YOUR USE OR RELIANCE ON THE CONTENT OR BUSINESS PRACTICES OF ANY THIRD-PARTY.</p>
+                         
+                        <p><strong>Privacy</strong></p>
+                        <p>Monitor IO respects the information you provide to us. Please see our <a href="https://www.Monitor IO.health/privacy-policy/">Privacy Policy</a> for an explanation of how we collect and handle your personal information that is not subject to HIPAA, the Health Insurance Portability and Accountability Act, which is the primary federal law governing health privacy. By clicking on the “I Agree” or “I Accept” button, accessing or using the Services, or by downloading or uploading any content from or through the Services, you acknowledge and agree to the provisions of the Privacy Policy and affirm that the Privacy Policy is a part of these Terms.</p>
+                        <p>By using the Services and accepting these Terms, you acknowledge that Monitor IO will share your personal information collected by the Services with your Provider.</p>
+                        <p>We are not responsible for nor liable to you or any third party for a healthcare provider’s treatment of personal information, including any collection, use, disclosure, storage, loss, theft or misuse of your personal information, whether or not such treatment violates applicable law or the Provider’s Notice of Privacy Practices.</p>
+                        
+                        <p><strong>SMS Services</strong></p>
+                        <p>By requesting communication via the Monitor IO SMS messaging service, you acknowledge that you agree to receive text messages as part of the Monitor IO Connect Program, with an estimated message frequency of 1 message per day relating to your care plan protocol.&nbsp; The Monitor IO Connect protocol is meant to keep you on track for your health care objectives and provide a way for you to communicate directly with your care team.</p>
+                        <p>You may use the following as part of your communication: reply HELP for help and reply STOP to stop.&nbsp; A link to the Monitor IO Privacy Policy may be found here.</p>
+                        <p>Disclosure: Message and data rates may apply.</p>
+                        <p><strong>Carriers are not liable for delayed or undelivered messages.</strong></p>
+                        
+                        <p><strong>Intellectual Property</strong></p>
+                        <p>The Services and all materials on the Services are owned or licensed by Monitor IO. We grant to you, for your personal purposes only, a nonexclusive, limited, and revocable right to access and use the Services during the term of this Agreement, so long as you comply with these Terms. You agree not to use the Services for any other purpose, including commercial purposes, such as co- branding, framing, linking, or reselling any portion of the Services without our prior written consent.</p>
+                        <p>You may access, download or print the materials available through the Services for non-commercial purposes and solely within the scope allowable by these Terms. You may not use the materials for any other purpose without our express written permission. Any unauthorized use of words or images from the Services may violate copyright laws, trademark laws, laws of privacy and publicity, and civil and criminal statutes.</p>
+                        <p>You may not use Monitor IO’s name, trademarks, service marks or logos or those of third parties appearing on the Services in any advertising or publicity, or otherwise to indicate Monitor IO’s or such third party’s sponsorship of or afﬁliation with any product or service without express written permission of Monitor IO or such third party.</p>
+                        <p>You own your Personal Information and any other content that you post on or through the Services. For Us to provide you with the Services, you grant to Monitor IO a perpetual, non-exclusive, fully paid and royalty-free, transferable, sublicensable, worldwide license to use your content solely for the purpose of providing the Services. You also agree to allow Monitor IO to de-identify and anonymize your content, including without limitation, your personal health information, and to use or disclose such de-identified information for purposes of Monitor IO’s management, operations, or administration of its business and the Services, as further described in the Privacy Policy.</p>
+                        
+                        <p><strong>Computer Equipment; Browser Access and Internet Services</strong></p>
+                        <p>With the exception of any Devices provided to you, you are responsible for obtaining, installing, maintaining and operating all software, hardware or other equipment (collectively, “Systems”) necessary for you to access and use the Services. This includes, without limitation, obtaining internet services, using up to date web-browsers and the best commercially available encryption, antivirus, anti-spyware, and internet security software. There are always certain security and access availability risks associated with using open networks such as the Internet, and you expressly assume such risks. You are responsible for the data security of the Systems used to access the Services and for the transmission and receipt of information using such Systems. We are not responsible for any errors or problems that arise from the malfunction or failure of the Internet or your System.</p>
+                        
+                        <p><strong>UNAUTHORIZED ACTIVITIES</strong></p>
+                        <p>While using the Services, you shall not:</p>
+                        <p>(A) Post, upload, publish, submit, transmit or otherwise make available any content that you do not have a right to make available;</p>
+                        <p>(B) Use, display, mirror or frame the Services, or any individual element within the Services, Monitor IO or Monitor IO’s name, any Monitor IO trademark, logo or other proprietary information, or the layout and design of any page or form contained on a page, without Our express written consent;</p>
+                        <p>(C) Access, tamper with, or use non-public areas of the Services, Monitor IO’s computer systems, or the technical delivery systems of Monitor IO’s service providers;</p>
+                        <p>(D) Attempt to probe, scan, or test the vulnerability of any Monitor IO system or network or breach any security or authentication measures;</p>
+                        <p>(E) Avoid, bypass, remove, deactivate, impair, descramble or otherwise circumvent any technological measure implemented by Monitor IO, your Provider, or any other third party (including another user) to protect the Services;</p>
+                        <p>(F) Attempt to access or search the Services or download materials from the Services through the use of any engine, software, tool, agent, device, or mechanism (including scripts, bots, spiders, scraper, crawlers, data mining tools or the like) other than the software and/or search agents provided by Monitor IO or other generally available third-party web browsers;</p>
+                        <p>(G) Send any unsolicited or unauthorized advertising, promotional materials, email, junk mail, spam, chain letters or other form of solicitation;</p>
+                        <p>(H) Use any meta tags or other hidden text or metadata utilizing an Monitor IO trademark, logo, URL, or product name without Our express written consent;</p>
+                        <p>(I) Use the Services or materials for any commercial purpose or the benefit of any third party or in any manner not permitted by these Terms;</p>
+                        <p>(J) Forge any TCP/IP packet header or any part of the header information in any email or newsgroup posting, or in any way use the Services or materials to send altered, deceptive or false source-identifying information;</p>
+                        <p>(K) Attempt to decipher, decompile, disassemble or reverse engineer any of the software used to provide the Services or materials;</p>
+                        <p>(L) Interfere with, or attempt to interfere with, the access of any user, host or network, including, without limitation, sending a virus, overloading, flooding, spamming, or mail-bombing the Services;</p>
+                        <p>(M) Collect or store any personally identifiable information (not your own) from the Services;</p>
+                        <p>(N) Impersonate or misrepresent your affiliation with any person or entity;</p>
+                        <p>(O) Violate any applicable law or regulation; or</p>
+                        <p>(P) Encourage or enable any other individual to do any of the above.</p>
+                        <p>We may investigate and prosecute violations of any of the above to the fullest extent of the law. We may involve and cooperate with law enforcement authorities in prosecuting users who violate these Terms. Other than monitoring your healthcare vitals, we have no obligation to monitor your access to the Services, however, we may do so for the purpose of operating the Services to ensure your compliance with these Terms and the Privacy Policy, or to comply with applicable law or the order or requirement of a court, administrative agency or other governmental body. Monitor IO reserves the right to, at any time and without prior notice, remove or disable access to any of its materials that We decide is in violation of these Terms, the Privacy Policy, or otherwise harmful to the Services.</p>
+                         
+                        <p><strong>Warranty Disclaimers</strong></p>
+                        <p>THE SERVICES AND MATERIALS ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED. Monitor IO ALSO EXPLICITLY DISCLAIMS ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE. WE MAKE NO WARRANTY THAT THE SERVICES OR MATERIALS WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS. WE MAKE NO WARRANTY REGARDING THE QUALITY OF ANY SERVICES OR MATERIALS PURCHASED OR OBTAINED THROUGH THE SERVICES OR THE ACCURACY, TIMELINESS, TRUTHFULNESS, COMPLETENESS OR RELIABILITY OF ANY CONTENT OBTAINED THROUGH THE SERVICES.</p>
+                        
+                        <p><strong>Limitation of Liability</strong></p>
+                        <p>NEITHER Monitor IO, NOR ANY OTHER PERSON OR ENTITY INVOLVED IN CREATING, PRODUCING, OR DELIVERING THE SERVICES OR MATERIALS WILL BE LIABLE FOR ANY INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, LOSS OF DATA OR LOSS OF GOODWILL, SERVICE INTERRUPTION, COMPUTER DAMAGE OR SYSTEM FAILURE OR THE COST OF SUBSTITUTE PRODUCTS OR SERVICES, OR FOR ANY DAMAGES FOR PERSONAL OR BODILY INJURY OR EMOTIONAL DISTRESS ARISING OUT OF OR IN CONNECTION WITH THE USE OF OR INABILITY TO USE THE SERVICES OR MATERIALS, OR FROM ANY COMMUNICATIONS, INTERACTIONS, OR MEETINGS WITH OTHER USERS OF THE SERVICES OR OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SERVICES WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT Monitor IO HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+                        <p>IF YOU ARE NOT SATISFIED WITH THE SERVICES, THE MATERIALS, OR THE TERMS, YOU SHOULD DISCONTINUE USING THEM – THIS IS YOUR ONLY REMEDY. BECAUSE SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SOME OF THESE LIMITATIONS MAY NOT APPLY TO YOU. IN SUCH STATES, Monitor IO’S LIABILITY IS LIMITED AND WARRANTIES ARE EXCLUDED TO THE GREATEST EXTENT PERMITTED BY LAW, BUT SHALL, IN NO EVENT, EXCEED $100.00. YOU MUST BRING ANY CLAIM ARISING FROM THE USAGE OF THE SERVICES OR MATERIALS WITHIN ONE (1) YEAR OF THE EVENT FROM WHICH THE CLAIM AROSE.</p>
+                        
+                        <p><strong>Indemniﬁcation</strong></p>
+                        <p>You agree to indemnify, defend and hold harmless Monitor IO, its clients, and its suppliers and their respective afﬁliates, employees, ofﬁcers, directors, agents, servants and representatives of each from any liability, loss, claim, suit, damage, and expense (including reasonable attorneys’ fees and expenses) arising out of or in any way connected with your access to or use of the Services or Monitor IO’s materials, your violation of these Terms, or any negligent or wrongful conduct by you or related to your account by you or any other person accessing the Services or Monitor IO materials through your account.</p>
+                         
+                        <p><strong>Applicable Law</strong></p>
+                        <p>These Terms shall be governed by the laws of the State of Delaware, without regard to any conflicts of laws. The courts of the State of Delaware and shall have jurisdiction over any action arising under these terms or your use of the Services or materials.</p>
+                         
+                        <p><strong>Modiﬁcation and Termination of the Monitor IO Services</strong></p>
+                        <p>If you breach any of these Terms, we may suspend or disable your account or terminate your access to the Services, without prior notice to you. There may be other instances where We may need to terminate your access to the Services that are not related to any of your actions or inactions. We reserve the right to terminate your access to and use of the Services and materials at any time, with or without cause, with 15 days notice.</p>
+                        
+                        <p><strong>Feedback</strong></p>
+                        <p>We welcome and encourage you to provide us with feedback, comments and suggestions for improvements to the Services or materials (“Feedback”). You may submit Feedback by emailing us at <a href="mailto:info@Monitor IO.co">info@Monitor IO.health</a>. If you submit any Feedback to us, we will own all intellectual property rights in such Feedback and may use such Feedback for any lawful purpose.</p>
+                         
+                        <p><strong>Entire Agreement</strong></p>
+                        <p>If you have not signed a separate written agreement with Monitor IO related to the Services, these Terms are the entire and exclusive understanding and agreement between you and Monitor IO regarding the Services, and these Terms supersede and replace any and all prior oral or written understandings or agreements between Us and you regarding the Services. If there is any conﬂict between these Terms and a signed written agreement between you and Monitor IO related to the Services, these Terms will control.</p>
+                        
+                        <p><strong>Assignment</strong></p>
+                        <p>You may not assign or transfer these Terms, by operation of law or otherwise, without Monitor IO’s prior written consent. Any attempt by you to assign or transfer these Terms, without such consent, will be null and void Monitor IO may assign or transfer these Terms, at its sole discretion, without restriction. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties, their successors and permitted assigns.</p>
+                        
+                        <p><strong>Dispute Resolution</strong></p>
+                        <p>If you or Monitor IO has any dispute regarding these Terms, including but not limited to any alleged breach of these Terms, the parties will submit the dispute to binding arbitration in Montana before a single arbitrator, in accordance with rules and procedures of the American Arbitration Association. The arbitrator may, but does not have to, award legal fees, arbitrator’s fees and costs and other costs incurred by the party that does not win the dispute. Any arbitration will be strictly confidential and neither party will disclose to any person (other than necessary to carry out the arbitration) the existence of the dispute or any aspect of the dispute.</p>
+                        
+                        <p><strong>General Legal Provisions</strong></p>
+                        <p>If any provision of this Agreement is determined to be invalid, illegal or unenforceable, the remaining provisions of the Agreement remain in full force, provided that the essential terms and conditions of this Agreement remain valid, binding and enforceable and the economic and legal substance of the transactions contemplated by the Agreement are materially preserved.</p>
+                        <p>The United States export control laws regulate the export and re-export of technology originating in the United States. This includes the electronic transmission of information and software to foreign countries and to certain foreign nationals. You agree to abide by these laws and their regulations.</p>
+                        <p>
+                            Nothing in this agreement creates an agency, partnership, or joint venture. 
+                            Failure to enforce any provision will not constitute a waiver of that provision.
+                        </p>
+                    </div>
+				</div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class = "footer">
+            <div class = "container">
+                <img src = "Icons/patientMonitor.png" class = "float-left mt-4 mb-4" width = "72" height = "72">
+                <p class = "mt-4 mb-4 float-right">
+                    &copy; 2021. All rights reserved. MonitorIO® is a registered trademark of the University of Maryland, Baltimore County.
+                    <br>
+                    Website made by Team 10 (Atta Navaid & Sam Sessums).
+                    <br>
+                    <a href = "#" onclick = "revealPage(12)">Privacy Policy</a> | <a href = "#" onclick = "revealPage(14)">Terms of Service</a> 
+                </p>
+            </div>
+        </div>
+    </body>
+    <script src = "MainWindowFiles/MainWindow.js"></script>
+</html>

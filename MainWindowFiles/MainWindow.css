@@ -1,0 +1,480 @@
+/*****************************
+
+    MONITOR I/O STYLESHEET
+
+******************************/
+
+/*****************************
+
+    NAVIGATION BAR STYLESHEET 
+
+******************************/
+
+a.nav-link {
+    color: black;
+}
+
+a.nav-link:hover {
+    cursor: pointer;
+}
+
+.navbar .action-form {
+	width: 280px;
+	padding: 20px;
+	left: auto;
+	right: 0;
+	font-size: 14px;
+}
+
+.navbar {
+    background-color: #f5f5f5;
+}
+
+.navbar .navbar-brand {
+	padding-left: 0;
+	font-size: 20px;
+	padding-right: 20px;
+    /*font-family: serif;*/
+    margin: 0px 30px 0px 0px;
+}
+
+.navbar .navbar-brand b {
+    font-family: monospace;
+	color: #ca3333;		
+}
+
+.navbar .navButton {
+    font-size: 16px;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    background: none;
+    border: none;
+}
+
+img.icon {
+    opacity: 0.5;
+    margin-bottom: 2px;
+}
+
+/*****************************
+
+    BODY STYLESHEET 
+
+******************************/
+
+#headerStrip {
+    background-color: #f5f5f5;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+.specialPage {
+    background-color: #f5f5f5;
+    padding-top: 20px;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+}
+
+.container {
+    max-width: 80rem;
+}
+
+.footer {
+    color: #999;
+    border-top: 5px solid #d6d6d6;
+}
+
+p.backToTop {
+    margin-top: 96px;
+}
+  
+/*****************************
+
+    HOME PAGE STYLESHEET 
+
+******************************/
+
+h1 {
+    font-weight: 100;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+div h2 {
+    font-weight: 400;
+}
+
+p mark {
+    background-color: lightpink;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.popup .popuptext {
+    position: absolute;
+    visibility: hidden;
+    width: 230px;
+    background-color: rgb(216, 216, 216);
+    color: rgb(83, 83, 83);
+    text-align: left;
+    border: 1px solid rgba(151, 157, 161, 0.4);
+    border-radius: 6px;
+    padding: 8px;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -113px;
+}
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(216, 216, 216) transparent transparent transparent;
+}
+  
+.popup .show {
+    visibility: visible;
+}
+
+/*****************************
+
+    PATIENTS PAGE STYLESHEET 
+
+******************************/
+  
+h6 {
+    font-size: 20px;
+    border-color: gray;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+input.textInp {
+    outline: none;
+    border: 1px solid rgba(108, 117, 125, 0.4);
+    border-radius: 4px;
+    width: 68%;
+    height: 100%;
+    padding: 7px 2px 7px 10px;
+    font-size: 16px;
+    margin: 0px 0px 0px 0px;
+}
+
+.patientListItem {
+    color: #6c757d;
+    padding-top: 10px;
+}
+
+.patient {
+    border-color: #6c757d;
+    border-bottom: 2px solid rgba(108, 117, 125, 0.15);
+    padding-bottom: 10px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+#searchButton {
+    margin: 0px 0px 6px 0px;
+}
+
+p.lead {
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
+button.float-right {
+    background: none;
+    padding: 0px;
+    border: none;
+    color: #007bff;
+    outline: none;
+}
+
+button.float-right:hover {
+    text-decoration: underline;
+}
+
+p.smallText {
+    font-size: 14px;
+}
+
+/*****************************
+
+    VITALS PAGE STYLESHEET 
+
+******************************/
+
+a.btn {
+    margin: 0px 2px 0px 2px;
+}
+
+#displayBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.vitalsInfoBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: white;
+}
+
+.logItem {
+    color: #6c757d;
+    padding-top: 10px;
+}
+
+.log {
+    border-color: #6c757d;
+    border-bottom: 2px solid rgba(108, 117, 125, 0.15);
+    padding-bottom: 10px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+#ECG {
+    position: absolute;
+    top: 112px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2aff00;
+    font-size: 120px;
+    font-weight: bolder;
+    background-color: #2b2b2b;
+    border: 4px solid #2aff00;
+    padding: 0px 30px 0px 30px;
+}
+
+#SPO2 {
+    position: absolute;
+    top: 112px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f6ff00;
+    font-size: 120px;
+    font-weight: bolder;
+    background-color: #2b2b2b;
+    border: 4px solid #f6ff00;
+    padding: 0px 30px 0px 30px;
+}
+
+#CO2 {
+    position: absolute;
+    top: 112px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e5e5e5;
+    font-size: 120px;
+    font-weight: bolder;
+    background-color: #2b2b2b;
+    border: 4px solid #e5e5e5;
+    padding: 0px 30px 0px 30px;
+}
+
+#BP {
+    position: absolute;
+    top: 112px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff1200;
+    font-size: 90px;
+    font-weight: bolder;
+    background-color: #2b2b2b;
+    border: 4px solid #ff1200;
+    padding: 0px 30px 0px 30px;
+}
+
+/*****************************
+
+    CHARTS PAGE STYLESHEET 
+
+******************************/
+
+.chartsBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: white;
+}
+
+/*****************************
+
+    LAB RESULTS PAGE STYLESHEET 
+
+******************************/
+
+.labResultsBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: white;
+}
+
+/*****************************
+
+    VITALS ALERT SETTINGS PAGE STYLESHEET 
+
+******************************/
+
+.alertsBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: white;
+}
+
+/*****************************
+
+    DEVICE CONTROLS PAGE STYLESHEET 
+
+******************************/
+
+.ventBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: #6c757d;
+    margin: 5%;
+    padding: 0%;
+}
+
+.ventSettings {
+    display: inline;
+}
+
+input.textInpVent {
+    outline: none;
+    border: 1px solid rgba(108, 117, 125, 0.4);
+    border-radius: 4px;
+    width: 68%;
+    height: 200%;
+    padding: 7px 2px 7px 10px;
+    font-size: 76px;
+    font-weight: bolder;
+    margin: 0px 0px 0px 0px;
+}
+
+input.textInpInf {
+    outline: none;
+    border: 1px solid rgba(108, 117, 125, 0.4);
+    border-radius: 4px;
+    width: 15%;
+    height: 100%;
+    padding: 7px 2px 7px 10px;
+    font-size: 16px;
+    margin: 0px 0px 10px 0px;
+}
+
+select {
+    outline: none;
+    border: 1px solid rgba(108, 117, 125, 0.4);
+    border-radius: 4px;
+    padding: 7px 2px 7px 10px;
+    font-size: 16px;
+    margin: 1px 10px 15px 10px;
+}
+
+/*****************************
+
+    SETTINGS PAGE STYLESHEET 
+
+******************************/
+
+.dark { 
+    color: #e6e6e6; 
+}
+
+.settingsBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: white;
+}
+
+.modeTitle {
+    padding: 12px 0px 0px 25px;
+    color: black;
+}
+
+/*****************************
+
+    ABOUT US PAGE STYLESHEET 
+
+******************************/
+
+h5 i {
+    font-weight: 100;
+    font-size: 16px;
+}
+
+/*****************************
+
+    CONTACT US PAGE STYLESHEET 
+
+******************************/
+
+#contactUsBox {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: white;
+}
+
+input.textInp2 {
+    outline: none;
+    border: 1px solid rgba(108, 117, 125, 0.4);
+    border-radius: 4px;
+    padding: 7px 2px 7px 10px;
+    font-size: 16px;
+    margin: 1px 0px 15px 10px;
+}
+
+/*****************************
+
+    FAQ PAGE STYLESHEET 
+
+******************************/
+
+.faqQnA {
+    font-size: 16px;
+}
+
+/*****************************
+
+    PRIVACY POLICY PAGE STYLESHEET 
+
+******************************/
+
+.privacyPolicyParagraph {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*****************************
+
+    PROFILE PAGE STYLESHEET 
+
+******************************/
+
+#profPic {
+    width: 200px;
+    height: 200px;
+    margin-top: 25px;
+}
+
+h3 {
+     margin: 3% 3% 3% 3%;
+}
+
+.profilePageInfo {
+    margin: 25px;
+}
+
+#displayBox2 {
+    border: 1px solid rgba(108, 117, 125, 0.15);
+    background-color: rgb(250, 250, 250);
+    margin-bottom: 20px;
+}
+
+#saveChangesButton {
+    margin: 0px 0px 25px 0px;
+}
